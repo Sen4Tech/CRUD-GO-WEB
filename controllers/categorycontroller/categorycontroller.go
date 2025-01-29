@@ -59,7 +59,7 @@ func Edit(w http.ResponseWriter, r *http.Request) {
 			panic(err)
 		}
 		idString := r.URL.Query().Get("id")
-		//Atoi conversion data String to Integer
+	
 		id, err := strconv.Atoi(idString)
 		if err != nil {
 			panic(err)
@@ -93,5 +93,15 @@ func Edit(w http.ResponseWriter, r *http.Request) {
 }
 
 func Delete(w http.ResponseWriter, r *http.Request) {
+	idString := r.URL.Query().Get("id")
+	id, err := strconv.Atoi(idString)
+	if err != nil {
+		panic(err)
+	}
 
+	if err := categorymodel.Delete(id); err != nil {
+		panic(err)
+	}
+
+	http.Redirect(w, r, "/categories", http.StatusSeeOther)
 }
