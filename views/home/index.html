@@ -14,62 +14,67 @@
                 <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                     <button id="mobile-menu-button" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white">
                         <span class="sr-only">Open main menu</span>
-                        <!-- Menu open: "hidden", Menu closed: "block" -->
                         <svg id="menu-open-icon" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                         </svg>
-                        <!-- Menu open: "block", Menu closed: "hidden" -->
                         <svg id="menu-close-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
-
-                <!-- Logo and Desktop Navigation -->
+    
+                <!-- Logo, Title and Desktop Navigation -->
                 <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <!-- Title -->
                     <div class="flex flex-shrink-0 items-center">
-                        <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+                        <a href="/" class="text-white text-xl font-bold">GO CRUD</a>
                     </div>
+                    <!-- Navigation Menu -->
                     <div class="hidden sm:ml-6 sm:block">
                         <div class="flex space-x-4">
-                            <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">Dashboard</a>
-                            <a href="/categories" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Categories</a>
-                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
-                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calendar</a>
+                            <a href="/categories" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Category</a>
+                            <a href="/products" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Products</a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Profile Dropdown -->
-                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    <button id="profile-button" type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                        <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                    </button>
-                    <!-- Profile dropdown panel -->
-                    <div id="profile-dropdown" class="hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" style="top: 3.5rem;">
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Your Profile</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
-                    </div>
-                </div>
             </div>
         </div>
-
+    
         <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden sm:hidden">
             <div class="space-y-1 px-2 pt-2 pb-3">
-                <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium">Dashboard</a>
-                <a href="/categories" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Categories</a>
-                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
-                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
-                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+                <a href="/categories" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Category</a>
+                <a href="/products" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Products</a>
             </div>
         </div>
     </nav>
-
-    <div>
-        <h1 class="text-xl font-bold mb-2">Welcome</h1>
-    </div>
+    
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-gray-900 mb-8">Welcome to GO CRUD</h1>
+                <p class="text-xl text-gray-600 mb-12">A simple and efficient way to manage your products and categories</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Categories Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Categories</h2>
+                        <p class="text-gray-600 mb-6">Manage and organize your product categories</p>
+                        <a href="/categories" class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors">
+                            View Categories
+                        </a>
+                    </div>
+    
+                    <!-- Products Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Products</h2>
+                        <p class="text-gray-600 mb-6">View and manage your product inventory</p>
+                        <a href="/products" class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors">
+                            View Products
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
 
     <script>
  
